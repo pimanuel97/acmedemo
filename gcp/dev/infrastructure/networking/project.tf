@@ -1,5 +1,5 @@
-resource "google_project" "host_project" {
-  name            = "Acme Non-Production Network"
-  project_id      = "acme-non-prod-network"
+resource "google_project" "acme_dev_network_project" {
+  name            = "Acme Dev Network"
+  project_id      = "acme-dev-network"
   billing_account = var.gcp-billing-acc-id
 }
