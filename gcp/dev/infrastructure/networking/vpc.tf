@@ -2,11 +2,15 @@ data "google_project" "project" {
   project_id = "acme-dev-network"
 }
 
+provider "google" {
+  region  = "asia-southeast1"
+  credentials = var.gcp-creds
+
+}
+
 module "acme_gcp_dev_network" {
   source  = "terraform-google-modules/network/google"
   version = ">= 13.0.0"
-
-  credentials = var.gcp-creds
 
   project_id   = data.google_project.project.number
   network_name = "vpc-gcp-dev"
