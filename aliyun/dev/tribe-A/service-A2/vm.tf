@@ -23,7 +23,7 @@ data "alicloud_vswitches" "vswitch" {
 
 resource "alicloud_instance" "service_A2_vm1" {
   availability_zone = data.alicloud_zones.zone_avail.zones.0.id
-  security_groups   = [ "sg-t4n08sv86fk9pia0sjys" ]
+  security_groups   = [ "sg-t4nfcg9ityzo6fu0sddk" ]
 
   # series III
   instance_type              = var.instance_type
