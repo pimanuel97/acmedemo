@@ -4,7 +4,7 @@ data "google_project" "project" {
 
 module "acme_gcp_dev_network" {
   source  = "terraform-google-modules/network/google"
-  version = "9.1"
+  version = ">= 13.0.0"
 
   project_id   = data.google_project.project.number
   network_name = "vpc-gcp-dev"
