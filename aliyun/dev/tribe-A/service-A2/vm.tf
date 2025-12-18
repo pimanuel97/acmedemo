@@ -19,7 +19,7 @@ data "alicloud_vpcs" "vpc" {
 resource "alicloud_security_group" "group" {
   security_group_name = var.name
   description         = "acme-service-A2-access"
-  vpc_id              = alicloud_vpc.vpc.id
+  vpc_id              = alicloud_vpcs.0.vpc.id
 }
 
 data "alicloud_zones" "zone_avail" {
