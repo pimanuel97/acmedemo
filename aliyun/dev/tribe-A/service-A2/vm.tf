@@ -22,7 +22,7 @@ data "alicloud_vswitches" "vswitch" {
 }
 
 resource "alicloud_instance" "service_A2_vm1" {
-  availability_zone = data.alicloud_zones.default.zones.0.id
+  availability_zone = data.alicloud_zones.zone_avail.zones.0.id
   security_groups   = [ "sg-t4n08sv86fk9pia0sjys" ]
 
   # series III
@@ -32,6 +32,6 @@ resource "alicloud_instance" "service_A2_vm1" {
   system_disk_description    = "System Disk"
   image_id                   = var.image_id
   instance_name              = var.name
-  vswitch_id                 = alicloud_vswitches.0.vswitch.id
+  vswitch_id                 = "vsw-t4nbb3nwn5980sgzts8b7"
   internet_max_bandwidth_out = 10
 }
